@@ -97,12 +97,59 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.account_circle),
-          iconSize: 30.0,
-          onPressed: () {},
+      drawer: Drawer(
+        child: ListView(
+          physics: BouncingScrollPhysics(),
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text('Zeeshan Rehman'),
+              accountEmail: Text('shanisukk@gmail.com'),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage('images/burger.jpg'),
+              ),
+            ),
+            ListTile(
+                leading: Icon(
+                  Icons.home_filled,
+                  size: 30.0,
+                ),
+                title: Text('Home')),
+            ListTile(
+                leading: Icon(
+                  Icons.history,
+                  size: 30.0,
+                ),
+                title: Text('Order History')),
+            ListTile(
+                leading: Icon(Icons.favorite_border, size: 30.0),
+                title: Text('Favourite Orders')),
+            ListTile(
+                leading: Icon(Icons.event_note_outlined, size: 30.0),
+                title: Text('My Addresses')),
+            ListTile(
+                leading: Icon(Icons.credit_card, size: 30.0),
+                title: Text('Foodies Credit')),
+            ListTile(
+                leading: Icon(Icons.doorbell_outlined, size: 30.0),
+                title: Text('Notifications')),
+            ListTile(
+                leading: Icon(Icons.question_answer_outlined, size: 30.0),
+                title: Text('FAQs')),
+            ListTile(
+                leading: Icon(Icons.star_border_outlined, size: 30.0),
+                title: Text('Rate Us')),
+            ListTile(
+                leading: Icon(Icons.feedback_outlined, size: 30.0),
+                title: Text('Send Feedback')),
+          ],
         ),
+      ),
+      appBar: AppBar(
+        // leading: IconButton(
+        //   icon: Icon(Icons.account_circle),
+        //   iconSize: 30.0,
+        //   onPressed: () {},
+        // ),
         title: Text('Foodies'),
         centerTitle: true,
         actions: [
